@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>vueJS Demo</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <div id="app">
+    {{ message }}
+    <span v-if="seen">Now you see me</span>
+    <ol>
+      <li v-for="todo in todos">
+        {{ todo.text }}
+      </li>
+    </ol>
+    <button v-on:click="reverseMessage">Reverse Message</button>
+    <input v-model="message">
+    <div class="sliderContainer" v-on:input="onChangeSlider">
+      <input type="range" min="0" max="255" v-model="red"><br>
+      <input type="range" min="0" max="255" v-model="green"><br>
+      <input type="range" min="0" max="255" v-model="blue"><br>
+      <input type="range" min="0" max="1" step="0.01" v-model="alpha"><br>
+    </div>
+    <div class="colorBox" v-bind:style="{ backgroundColor: rgbaColor }"> </div>
+    <div class="field">
+      <img class="card" alt="" v-for="card in cards" v-bind:src="'img/' + card.set + '.jpg'" v-on:click="playSound(card)">
+    </div>
+  </div> 
+  <!-- end vueApp -->
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

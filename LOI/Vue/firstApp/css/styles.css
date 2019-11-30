@@ -1,0 +1,14 @@
+body {
+}
+.colorBox {
+  height: 200px;
+  width: 800px;
+}
+.card {
+  display: block;
+  float: left;
+  width: 25%;
+}
+.field{
+  width: 800px
+}
